@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(),
-      debugShowCheckedModeBanner: false,
+      //debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -47,7 +47,6 @@ class TempNumWidget extends StatefulWidget {
 
 class _TempNumWidgetState extends State<TempNumWidget> {
   final _formKey = GlobalKey<FormState>();
-  static const int ordm = 0x00BA;
 
   String output;
   String output2;
@@ -63,7 +62,7 @@ class _TempNumWidgetState extends State<TempNumWidget> {
         if (inputSubstring.contains('C')) {
           output = (double.parse(input.substring(0, i)) + 273.15)
                   .toStringAsFixed(2) +
-              ' \u00B0K';
+              ' K';
           output2 = ((double.parse(input.substring(0, i)) * 9 / 5) + 32)
                   .toStringAsFixed(2) +
               '\u00B0F';
@@ -73,7 +72,7 @@ class _TempNumWidgetState extends State<TempNumWidget> {
               ' \u00B0K';
           output2 = ((double.parse(input.substring(0, i)) - 32) * 5 / 9)
                   .toStringAsFixed(2) +
-              ' \u00B0C';
+              ' C';
         } else if (inputSubstring.contains('K')) {
           output = (double.parse(input.substring(0, i)) - 273.15)
                   .toStringAsFixed(2) +
@@ -155,7 +154,7 @@ class _TempNumWidgetState extends State<TempNumWidget> {
                   BoxDecoration(border: Border.all(color: Colors.black)),
               //color: Theme.of(context).primaryColor,
               child: Text(
-                "\u00B0K: " + output,
+                "\u00B0K: ",
                 style: TextStyle(color: Colors.black, fontSize: 20.0),
               ),
             ),
@@ -186,6 +185,7 @@ class _TempNumWidgetState extends State<TempNumWidget> {
               },
             ),
           ),
+          //Auto Temp Convert
           Padding(
             padding: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0),
             child: Container(
