@@ -62,7 +62,7 @@ class _TempNumWidgetState extends State<TempNumWidget> {
         if (inputSubstring.contains('C')) {
           output = (double.parse(input.substring(0, i)) + 273.15)
                   .toStringAsFixed(2) +
-              ' K';
+              ' \u00B0K';
           output2 = ((double.parse(input.substring(0, i)) * 9 / 5) + 32)
                   .toStringAsFixed(2) +
               '\u00B0F';
@@ -72,7 +72,7 @@ class _TempNumWidgetState extends State<TempNumWidget> {
               ' \u00B0K';
           output2 = ((double.parse(input.substring(0, i)) - 32) * 5 / 9)
                   .toStringAsFixed(2) +
-              ' C';
+              ' \u00B0C';
         } else if (inputSubstring.contains('K')) {
           output = (double.parse(input.substring(0, i)) - 273.15)
                   .toStringAsFixed(2) +
@@ -194,7 +194,7 @@ class _TempNumWidgetState extends State<TempNumWidget> {
               color: Theme.of(context).primaryColor,
               child: Text(
                 output ?? 'No input provided.',
-                style: TextStyle(color: Colors.white, fontSize: 20.0),
+                style: TextStyle(color: Colors.black, fontSize: 20.0),
               ),
             ),
           ),
@@ -206,7 +206,7 @@ class _TempNumWidgetState extends State<TempNumWidget> {
               color: Theme.of(context).primaryColor,
               child: Text(
                 output2 ?? 'No input provided.',
-                style: TextStyle(color: Colors.white, fontSize: 20.0),
+                style: TextStyle(color: Colors.black, fontSize: 20.0),
               ),
             ),
           ),
